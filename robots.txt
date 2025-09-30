@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://andyomos.github.io/scrollcat/sitemap.xml
