@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import Home  from '@/pages/Home'
-import NFTs  from '@/pages/NFTs'
-import Swap  from '@/pages/Swap'
-import About from '@/pages/About'
+import Home   from '@/pages/Home'
+import NFTs   from '@/pages/NFTs'
+import Swap   from '@/pages/Swap'
+import About  from '@/pages/About'
+import Verify from '@/pages/Verify'
 
 export default function App() {
   return (
@@ -16,7 +17,8 @@ export default function App() {
             <Route path="/"      element={<Home  />} />
             <Route path="/nfts"  element={<NFTs  />} />
             <Route path="/swap/*" element={<Swap  />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/about"  element={<About  />} />
+            <Route path="/verify" element={<Verify />} />
           </Routes>
         </div>
         <Footer />
