@@ -48,12 +48,15 @@ export default function Verify() {
       // ── 2. Sign the nonce ───────────────────────────────────────────────
       setStatus('signing')
       const signed = await supra.signMessage({ message: nonce })
+
+      // Debug: capture what StarKey actually returns
+      const returnedKeys = signed != null ? Object.keys(signed).join(', ') : 'null'
       const signature = signed?.signature
       const publicKey = signed?.publicKey
 
       if (!signature || !publicKey) {
         setStatus('error')
-        setMessage('Wallet did not return a valid signature. Please try again.')
+        setMessage(`StarKey returned: {${returnedKeys}} — signature=${JSON.stringify(signature)}, publicKey=${JSON.stringify(publicKey)}`)
         return
       }
 
