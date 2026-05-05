@@ -1,0 +1,4 @@
+Contact: mailto:support@scrollcat.org
+Expires: 2027-05-05T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://scrollcat.org/.well-known/security.txt
