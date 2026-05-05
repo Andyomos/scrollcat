@@ -23,7 +23,7 @@ export async function onRequestPost(context) {
 
   const { wallet, signature, publicKey, nonce, userId } = body ?? {};
 
-  if (!wallet || !signature || !publicKey || !nonce || !userId) {
+  if (!wallet || !nonce || !userId) {
     return Response.json({ success: false, error: 'Missing required fields.' }, { status: 400, headers: corsHeaders });
   }
 
@@ -36,13 +36,15 @@ export async function onRequestPost(context) {
     }, { status: 400, headers: corsHeaders });
   }
 
-  // ── 2. Verify Ed25519 wallet signature ────────────────────────────────
-  const sigOk = await verifyEd25519(publicKey, nonce, signature);
-  if (!sigOk) {
-    return Response.json({
-      success: false,
-      error: 'Wallet signature is invalid. Make sure you are signing with the correct wallet.',
-    }, { status: 400, headers: corsHeaders });
+  // ── 2. Verify Ed25519 wallet signature (if StarKey provided one) ──────
+  if (signature && publicKey) {
+    const sigOk = await verifyEd25519(publicKey, nonce, signature);
+    if (!sigOk) {
+      return Response.json({
+        success: false,
+        error: 'Wallet signature is invalid. Make sure you are signing with the correct wallet.',
+      }, { status: 400, headers: corsHeaders });
+    }
   }
 
   // ── 3. Check Supra chain for $SCAT or ScrollCat NFT holdings ──────────

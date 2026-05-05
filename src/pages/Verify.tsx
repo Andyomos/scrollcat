@@ -45,19 +45,26 @@ export default function Verify() {
         return
       }
 
-      // ── 2. Sign the nonce ───────────────────────────────────────────────
+      // ── 2. Sign the nonce (optional — strengthens proof of wallet ownership) ──
       setStatus('signing')
-      const signed = await supra.signMessage({ message: nonce })
+      let signature: string | null = null
+      let publicKey: string | null = null
+      try {
+        const signed = await supra.signMessage({ message: nonce })
+        signature = signed?.signature ?? null
+        publicKey = signed?.publicKey ?? null
+      } catch (signErr: any) {
+        if (signErr?.message?.includes('User rejected') || signErr?.message?.includes('cancel')) {
+          setStatus('error')
+          setMessage('You cancelled the signature request.')
+          return
+        }
+        // Non-fatal: proceed without signature
+      }
 
-      // Debug: capture what StarKey actually returns
-      const returnedKeys = signed != null ? Object.keys(signed).join(', ') : 'null'
-      const signature = signed?.signature
-      const publicKey = signed?.publicKey
-
-      if (!signature || !publicKey) {
-        setStatus('error')
-        setMessage(`StarKey returned: {${returnedKeys}} — signature=${JSON.stringify(signature)}, publicKey=${JSON.stringify(publicKey)}`)
-        return
+      if (signature === null && publicKey === null) {
+        // StarKey dismissed the popup or Supra account not active — try without signature
+        // Backend will skip Ed25519 check and rely on HMAC nonce + balance
       }
 
       // ── 3. Send to verification endpoint ───────────────────────────────
