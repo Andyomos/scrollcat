@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { scroll-behavior: smooth; }
+
+  body {
+    @apply bg-dark-950 text-gray-100 antialiased;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(168,85,247,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(6,182,212,0.06) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::selection { @apply bg-neon-purple/30 text-white; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-dark-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-neon-purple/40 rounded-full; }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/[0.04] backdrop-blur-xl border border-white/[0.08] rounded-2xl;
+  }
+
+  .glass-hover {
+    @apply hover:bg-white/[0.07] hover:border-neon-purple/30 transition-all duration-300;
+  }
+
+  .neon-text {
+    @apply bg-neon-gradient bg-clip-text text-transparent;
+  }
+
+  .btn-primary {
+    @apply relative px-6 py-3 rounded-xl font-semibold text-sm overflow-hidden
+           bg-neon-gradient text-white transition-all duration-300
+           hover:shadow-neon-purple hover:scale-[1.02] active:scale-[0.98];
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 rounded-xl font-semibold text-sm border border-white/10
+           text-gray-300 hover:border-neon-purple/50 hover:text-white
+           hover:bg-neon-purple/10 transition-all duration-300;
+  }
+
+  .rarity-common    { @apply border-gray-500/40 bg-gray-500/10; }
+  .rarity-uncommon  { @apply border-green-500/40 bg-green-500/10; }
+  .rarity-rare      { @apply border-blue-500/40 bg-blue-500/10; }
+  .rarity-epic      { @apply border-neon-purple/40 bg-neon-purple/10; }
+  .rarity-legendary { @apply border-neon-gold/40 bg-neon-gold/10; }
+  .rarity-mythic    { @apply border-neon-pink/60 bg-gradient-to-br from-neon-purple/20 to-neon-cyan/20; }
+}
