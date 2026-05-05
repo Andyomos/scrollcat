@@ -48,11 +48,11 @@ export async function onRequestPost(context) {
   }
 
   // ── 3. Check Supra chain for $SCAT or ScrollCat NFT holdings ──────────
-  const holds = await checkSupraHoldings(wallet);
+  const { holds, debug } = await checkSupraHoldings(wallet);
   if (!holds) {
     return Response.json({
       success: false,
-      error: 'This wallet does not hold any $SCAT or ScrollCat NFTs. Buy $SCAT at scrollcat.org/swap to qualify.',
+      error: 'Wallet has no qualifying holdings. DEBUG RESOURCE TYPES:\n' + debug,
     }, { status: 403, headers: corsHeaders });
   }
 
@@ -122,22 +122,25 @@ async function checkSupraHoldings(walletAddress) {
     const res = await fetch(`${SUPRA_RPC}/accounts/${walletAddress}/resources`, {
       headers: { Accept: 'application/json' },
     });
-    if (!res.ok) return false;
+    if (!res.ok) return { holds: false, debug: `RPC ${res.status}` };
 
     const resources = await res.json();
-    if (!Array.isArray(resources)) return false;
+    if (!Array.isArray(resources)) return { holds: false, debug: 'non-array response' };
 
-    return resources.some(r => {
+    const types = resources.map(r => r?.type ?? '').filter(Boolean);
+
+    const holds = resources.some(r => {
       if (!r?.type?.includes(SCAT_ADDRESS)) return false;
-      // Check any common balance field
       const d = r.data ?? {};
       const bal = d?.coin?.value ?? d?.amount ?? d?.balance ?? d?.supply ?? 0;
       try { return BigInt(bal) > 0n; }
       catch { return Number(bal) > 0; }
     });
+
+    return { holds, debug: types.join('\n') };
   } catch (err) {
     console.error('Supra RPC error:', err);
-    return false;
+    return { holds: false, debug: String(err) };
   }
 }
 
