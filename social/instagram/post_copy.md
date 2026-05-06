@@ -2,6 +2,17 @@
 
 ---
 
+## Profile Bio
+```
+The cat with 9 lives for every dip 🐱∞
+$SCAT on Supra blockchain
+12-piece NFT collection
+🔗 scrollcat.org
+```
+> Note: put scrollcat.org in the Website field — keeps it out of the 150-char bio count.
+
+---
+
 ## Launch Post Caption
 ```
 The cosmic cats have arrived 🐱✨
