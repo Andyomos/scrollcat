@@ -56,10 +56,13 @@ async function verifyDiscordSignature(publicKeyHex, signature, timestamp, body) 
     const key = await crypto.subtle.importKey(
       'raw', hexToBytes(publicKeyHex), { name: 'Ed25519' }, false, ['verify']
     );
-    return crypto.subtle.verify(
-      'Ed25519', key, hexToBytes(signature), new TextEncoder().encode(timestamp + body)
+    return await crypto.subtle.verify(
+      { name: 'Ed25519' }, key, hexToBytes(signature), new TextEncoder().encode(timestamp + body)
     );
-  } catch { return false; }
+  } catch (e) {
+    console.error('Ed25519 verify error:', e?.message ?? e);
+    return false;
+  }
 }
 
 // ── HMAC nonce: "userId:timestamp:hmac" ───────────────────────────────────
