@@ -119,26 +119,43 @@ async function verifyEd25519(publicKeyHex, message, signatureHex) {
 // ── Check Supra account resources for $SCAT / ScrollCat NFT ──────────────
 async function checkSupraHoldings(walletAddress) {
   try {
-    const res = await fetch(`${SUPRA_RPC}/accounts/${walletAddress}/resources`, {
+    // ── 1. Check $SCAT FA balance via view function ──────────────────────
+    // SCAT uses Fungible Asset standard — balance is NOT in account resources
+    const viewRes = await fetch(`${SUPRA_RPC}/view`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify({
+        function: '0x1::primary_fungible_store::balance',
+        type_arguments: ['0x1::fungible_asset::Metadata'],
+        arguments: [walletAddress, SCAT_ADDRESS],
+      }),
+    });
+    if (viewRes.ok) {
+      const viewData = await viewRes.json();
+      const scatBal = BigInt(viewData?.result?.[0] ?? '0');
+      if (scatBal > 0n) return { holds: true, debug: `SCAT balance: ${scatBal}` };
+    }
+
+    // ── 2. Check for ScrollCat NFTs via account resources ────────────────
+    const resRes = await fetch(`${SUPRA_RPC}/accounts/${walletAddress}/resources`, {
       headers: { Accept: 'application/json' },
     });
-    if (!res.ok) return { holds: false, debug: `RPC ${res.status}` };
+    if (!resRes.ok) return { holds: false, debug: `Resources RPC ${resRes.status}` };
 
-    const body = await res.json();
-
+    const body = await resRes.json();
     // Supra RPC returns { Resources: { resource: [ [typeString, dataObj], ... ] } }
     const resourceList = body?.Resources?.resource ?? [];
+    const types = resourceList.map(([t]) => t ?? '').filter(Boolean);
 
-    const types = resourceList.map(([t]) => t).filter(Boolean);
+    // Check token store for NFTs (0x3::token::TokenStore)
+    const tokenStoreEntry = resourceList.find(([t]) => t?.includes('::token::TokenStore'));
+    if (tokenStoreEntry) {
+      const data = tokenStoreEntry[1] ?? {};
+      const length = parseInt(data?.tokens?.length ?? '0', 10);
+      if (length > 0) return { holds: true, debug: `NFT token store has ${length} entries` };
+    }
 
-    const holds = resourceList.some(([type, data]) => {
-      if (!type?.includes(SCAT_ADDRESS)) return false;
-      const bal = data?.coin?.value ?? data?.amount ?? data?.balance ?? data?.supply ?? 0;
-      try { return BigInt(bal) > 0n; }
-      catch { return Number(bal) > 0; }
-    });
-
-    return { holds, debug: `wallet=${walletAddress}\n` + types.join('\n') };
+    return { holds: false, debug: `wallet=${walletAddress}\nSCAT=0\n` + types.join('\n') };
   } catch (err) {
     console.error('Supra RPC error:', err);
     return { holds: false, debug: String(err) };
