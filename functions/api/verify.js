@@ -48,11 +48,11 @@ export async function onRequestPost(context) {
   }
 
   // ── 3. Check Supra chain for $SCAT or ScrollCat NFT holdings ──────────
-  const { holds, debug } = await checkSupraHoldings(wallet);
+  const holds = await checkSupraHoldings(wallet);
   if (!holds) {
     return Response.json({
       success: false,
-      error: 'Wallet has no qualifying holdings. DEBUG RESOURCE TYPES:\n' + debug,
+      error: 'This wallet does not hold any $SCAT or ScrollCat NFTs. Buy $SCAT at scrollcat.org/swap to qualify.',
     }, { status: 403, headers: corsHeaders });
   }
 
@@ -133,32 +133,31 @@ async function checkSupraHoldings(walletAddress) {
     if (viewRes.ok) {
       const viewData = await viewRes.json();
       const scatBal = BigInt(viewData?.result?.[0] ?? '0');
-      if (scatBal > 0n) return { holds: true, debug: `SCAT balance: ${scatBal}` };
+      if (scatBal > 0n) return true;
     }
 
     // ── 2. Check for ScrollCat NFTs via account resources ────────────────
     const resRes = await fetch(`${SUPRA_RPC}/accounts/${walletAddress}/resources`, {
       headers: { Accept: 'application/json' },
     });
-    if (!resRes.ok) return { holds: false, debug: `Resources RPC ${resRes.status}` };
+    if (!resRes.ok) return false;
 
     const body = await resRes.json();
     // Supra RPC returns { Resources: { resource: [ [typeString, dataObj], ... ] } }
     const resourceList = body?.Resources?.resource ?? [];
-    const types = resourceList.map(([t]) => t ?? '').filter(Boolean);
 
     // Check token store for NFTs (0x3::token::TokenStore)
     const tokenStoreEntry = resourceList.find(([t]) => t?.includes('::token::TokenStore'));
     if (tokenStoreEntry) {
       const data = tokenStoreEntry[1] ?? {};
       const length = parseInt(data?.tokens?.length ?? '0', 10);
-      if (length > 0) return { holds: true, debug: `NFT token store has ${length} entries` };
+      if (length > 0) return true;
     }
 
-    return { holds: false, debug: `wallet=${walletAddress}\nSCAT=0\n` + types.join('\n') };
+    return false;
   } catch (err) {
     console.error('Supra RPC error:', err);
-    return { holds: false, debug: String(err) };
+    return false;
   }
 }
 
