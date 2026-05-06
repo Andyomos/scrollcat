@@ -124,20 +124,21 @@ async function checkSupraHoldings(walletAddress) {
     });
     if (!res.ok) return { holds: false, debug: `RPC ${res.status}` };
 
-    const resources = await res.json();
-    if (!Array.isArray(resources)) return { holds: false, debug: 'non-array response' };
+    const body = await res.json();
 
-    const types = resources.map(r => r?.type ?? '').filter(Boolean);
+    // Supra RPC returns { Resources: { resource: [ [typeString, dataObj], ... ] } }
+    const resourceList = body?.Resources?.resource ?? [];
 
-    const holds = resources.some(r => {
-      if (!r?.type?.includes(SCAT_ADDRESS)) return false;
-      const d = r.data ?? {};
-      const bal = d?.coin?.value ?? d?.amount ?? d?.balance ?? d?.supply ?? 0;
+    const types = resourceList.map(([t]) => t).filter(Boolean);
+
+    const holds = resourceList.some(([type, data]) => {
+      if (!type?.includes(SCAT_ADDRESS)) return false;
+      const bal = data?.coin?.value ?? data?.amount ?? data?.balance ?? data?.supply ?? 0;
       try { return BigInt(bal) > 0n; }
       catch { return Number(bal) > 0; }
     });
 
-    return { holds, debug: types.join('\n') };
+    return { holds, debug: `wallet=${walletAddress}\n` + types.join('\n') };
   } catch (err) {
     console.error('Supra RPC error:', err);
     return { holds: false, debug: String(err) };
