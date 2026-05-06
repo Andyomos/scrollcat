@@ -8,6 +8,7 @@ export const SUPRA_WALLET    = '0xf4a915b5e29bb5e8bcad30ebf78495e6a6c3acd2bcaff2
 export const SOCIAL = {
   twitter:  'https://x.com/cat_scroll',
   telegram: 'https://t.me/cat_scroll',
+  discord:  'https://discord.gg/6NKeEzUt5',
 }
 
 export const EMAIL = {
