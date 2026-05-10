@@ -72,6 +72,7 @@ export default function Hero() {
             className="relative">
             <div className="absolute inset-0 bg-neon-purple/30 rounded-3xl blur-3xl scale-95" />
             <img src="/imgs/Neon Surfing Through Digital Cosmos.png" alt="ScrollCat Hero"
+              fetchPriority="high"
               className="relative w-80 h-80 sm:w-96 sm:h-96 object-contain rounded-3xl drop-shadow-[0_0_40px_rgba(168,85,247,0.5)]" />
           </motion.div>
         </motion.div>
