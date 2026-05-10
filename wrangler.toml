@@ -1,0 +1,7 @@
+name = "scrollcat"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "dist"
+
+[[kv_namespaces]]
+binding = "SCROLLCAT_LEADERBOARD"
+id      = "a6edda75cd0c44bcb22eab2e9618bca9"

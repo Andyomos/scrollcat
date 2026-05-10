@@ -14,10 +14,11 @@ declare global {
 }
 
 const NAV = [
-  { label: 'Home',  to: '/' },
-  { label: 'NFTs',  to: '/nfts' },
-  { label: 'Swap',  to: '/swap' },
-  { label: 'About', to: '/about' },
+  { label: 'Home',        to: '/'            },
+  { label: 'NFTs',        to: '/nfts'        },
+  { label: 'Swap',        to: '/swap'        },
+  { label: 'Leaderboard', to: '/leaderboard' },
+  { label: 'About',       to: '/about'       },
 ]
 
 export default function Header() {
