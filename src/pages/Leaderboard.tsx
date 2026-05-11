@@ -6,6 +6,7 @@ import { clsx } from 'clsx'
 
 const CLAIM_FEE_SUPRA = 10
 const API_URL = '/api/leaderboard'
+const COMPETITION_END = '2026-06-10T00:00:00.000Z'
 
 interface Entry {
   rank: number
@@ -65,7 +66,7 @@ export default function Leaderboard() {
   const [claimMsg, setClaimMsg]     = useState('')
   const { address, connect, installed } = useStarKey()
 
-  const timeLeft = useCountdown(board?.competitionEnd ?? new Date(Date.now() + 86400000 * 30).toISOString())
+  const timeLeft = useCountdown(board?.competitionEnd ?? COMPETITION_END)
 
   const fetchBoard = useCallback(async () => {
     setLoading(true)
