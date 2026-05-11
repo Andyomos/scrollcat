@@ -17,7 +17,6 @@ export default function App() {
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-dark-950 text-white">
         <AnnouncementBar />
-        <div className="h-8" />{/* spacer for announcement bar */}
         <Header />
         <div className="flex-1">
           <Suspense fallback={<div className="flex-1" />}>

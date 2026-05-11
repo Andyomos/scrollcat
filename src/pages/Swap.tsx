@@ -38,7 +38,7 @@ const widgetConfig: WidgetConfig = {
 
 export default function Swap() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-10">
         <p className="text-xs uppercase tracking-widest text-neon-cyan font-semibold mb-3">Multi-Chain Swap</p>
         <h1 className="font-display font-black text-5xl neon-text mb-3">Swap Any Token</h1>

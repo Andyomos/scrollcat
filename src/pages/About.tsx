@@ -17,7 +17,7 @@ const statusStyle = {
 
 export default function About() {
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-20">
 
       {/* Hero */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">

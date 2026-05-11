@@ -11,7 +11,7 @@ export default function NFTs() {
   const visible = filter === 'All' ? NFTS : NFTS.filter(n => n.rarity === filter)
 
   return (
-    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-28 pb-20">
+    <main className="max-w-7xl mx-auto px-4 sm:px-6 pt-36 pb-20">
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-12">
         <p className="text-xs uppercase tracking-widest text-neon-purple font-semibold mb-3">Collection</p>
         <h1 className="font-display font-black text-5xl neon-text mb-3">ScrollCat NFTs</h1>
