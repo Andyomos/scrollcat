@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import WalletProvider from '@/components/WalletProvider'
+import AnnouncementBar from '@/components/AnnouncementBar'
 
 const Home        = lazy(() => import('@/pages/Home'))
 const NFTs        = lazy(() => import('@/pages/NFTs'))
@@ -15,6 +16,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-dark-950 text-white">
+        <AnnouncementBar />
+        <div className="h-8" />{/* spacer for announcement bar */}
         <Header />
         <div className="flex-1">
           <Suspense fallback={<div className="flex-1" />}>
