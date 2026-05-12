@@ -15,25 +15,23 @@ const Leaderboard = lazy(() => import('@/pages/Leaderboard'))
 export default function App() {
   return (
     <BrowserRouter>
-      <WalletProvider>
-        <div className="min-h-screen flex flex-col bg-dark-950 text-white">
-          <AnnouncementBar />
-          <Header />
-          <div className="flex-1">
-            <Suspense fallback={<div className="flex-1" />}>
-              <Routes>
-                <Route path="/"            element={<Home  />} />
-                <Route path="/nfts"        element={<NFTs  />} />
-                <Route path="/about"       element={<About />} />
-                <Route path="/verify"      element={<Verify />} />
-                <Route path="/swap/*"      element={<Swap />} />
-                <Route path="/leaderboard" element={<Leaderboard />} />
-              </Routes>
-            </Suspense>
-          </div>
-          <Footer />
+      <div className="min-h-screen flex flex-col bg-dark-950 text-white">
+        <AnnouncementBar />
+        <Header />
+        <div className="flex-1">
+          <Suspense fallback={<div className="flex-1" />}>
+            <Routes>
+              <Route path="/"            element={<Home  />} />
+              <Route path="/nfts"        element={<NFTs  />} />
+              <Route path="/about"       element={<About />} />
+              <Route path="/verify"      element={<Verify />} />
+              <Route path="/swap/*"      element={<WalletProvider><Swap /></WalletProvider>} />
+              <Route path="/leaderboard" element={<WalletProvider><Leaderboard /></WalletProvider>} />
+            </Routes>
+          </Suspense>
         </div>
-      </WalletProvider>
+        <Footer />
+      </div>
     </BrowserRouter>
   )
 }
