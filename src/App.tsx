@@ -26,7 +26,7 @@ export default function App() {
               <Route path="/about"       element={<About />} />
               <Route path="/verify"      element={<Verify />} />
               <Route path="/swap/*"      element={<WalletProvider><Swap /></WalletProvider>} />
-              <Route path="/leaderboard" element={<WalletProvider><Leaderboard /></WalletProvider>} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
             </Routes>
           </Suspense>
         </div>
