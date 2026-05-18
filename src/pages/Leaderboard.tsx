@@ -83,7 +83,7 @@ export default function Leaderboard() {
 
   useEffect(() => {
     fetchBoard()
-    const id = setInterval(fetchBoard, 60_000)
+    const id = setInterval(fetchBoard, 300_000)
     return () => clearInterval(id)
   }, [fetchBoard])
 
