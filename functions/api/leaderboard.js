@@ -115,7 +115,7 @@ export async function onRequest(ctx) {
     }
     try {
       const board = await fetchAndAggregate()
-      await env.SCROLLCAT_LEADERBOARD.put(KV_KEY, JSON.stringify(board), { expirationTtl: 300 })
+      await env.SCROLLCAT_LEADERBOARD.put(KV_KEY, JSON.stringify(board), { expirationTtl: 60 })
       return new Response(JSON.stringify({ ok: true, entries: board.entries.length }), {
         headers: { ...cors, 'Content-Type': 'application/json' }
       })
@@ -138,7 +138,7 @@ export async function onRequest(ctx) {
     if (!board) {
       try {
         board = await fetchAndAggregate()
-        await env.SCROLLCAT_LEADERBOARD.put(KV_KEY, JSON.stringify(board), { expirationTtl: 300 })
+        await env.SCROLLCAT_LEADERBOARD.put(KV_KEY, JSON.stringify(board), { expirationTtl: 60 })
       } catch (e) {
         board = {
           updatedAt:        new Date().toISOString(),
@@ -158,4 +158,15 @@ export async function onRequest(ctx) {
   }
 
   return new Response('Method Not Allowed', { status: 405, headers: cors })
+}
+
+// Cloudflare Cron Trigger — runs every 5 minutes to keep leaderboard fresh
+export async function onScheduled(event, env) {
+  try {
+    const board = await fetchAndAggregate()
+    await env.SCROLLCAT_LEADERBOARD.put(KV_KEY, JSON.stringify(board), { expirationTtl: 60 })
+    console.log(`[cron] leaderboard synced — ${board.entries.length} entries`)
+  } catch (e) {
+    console.error(`[cron] sync failed: ${e.message}`)
+  }
 }

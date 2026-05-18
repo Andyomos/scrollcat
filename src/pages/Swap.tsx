@@ -22,7 +22,7 @@ const widgetConfig: WidgetConfig = {
     showFeeTooltip: true,
   },
   walletConfig: {
-    forceInternalWalletManagement: true,
+    forceInternalWalletManagement: false,
     walletConnect: {
       projectId: import.meta.env.VITE_WC_PROJECT_ID ?? '',
     },

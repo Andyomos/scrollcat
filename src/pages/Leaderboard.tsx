@@ -81,7 +81,11 @@ export default function Leaderboard() {
     }
   }, [])
 
-  useEffect(() => { fetchBoard() }, [fetchBoard])
+  useEffect(() => {
+    fetchBoard()
+    const id = setInterval(fetchBoard, 60_000)
+    return () => clearInterval(id)
+  }, [fetchBoard])
 
   const userEntry = board?.entries.find(e => e.wallet.toLowerCase() === address?.toLowerCase())
   const isWinner  = userEntry?.rank === 1
