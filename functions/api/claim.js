@@ -21,10 +21,10 @@
 const SUPRA_RPC          = 'https://rpc-mainnet.supra.com/rpc/v1'
 const TREASURY_WALLET    = '0xf4a915b5e29bb5e8bcad30ebf78495e6a6c3acd2bcaff2ce36b861a5b50f9988'
 const DISTRIBUTOR_WALLET = '0x56e54b29f9e518ea8944df0b11e65a20b026a6dc7ca22e1aeeed518d5dc6ee31'
-const NFT_CREATOR        = '0xf4a915b5e29bb5e8bcad30ebf78495e6a6c3acd2bcaff2ce36b861a5b50f9988'
+const NFT_CREATOR        = '0x05eb2a2c5c2b7572265c3271da23d106850313dee3c3b305df56e03fc0e18a38'  // actual mint creator (Atmos/Crystara), NOT treasury
 const NFT_COLLECTION     = 'ScrollCat'
-const NFT_TOKEN_NAME     = 'Feed Phantom'
-const NFT_PROP_VERSION   = 0n        // property_version (u64)
+const NFT_TOKEN_NAME     = 'TOKEN_5'   // on-chain token name (display name "Feed Phantom" lives in metadata)
+const NFT_PROP_VERSION   = 1n          // property_version (u64) — minted token is pv1, not 0
 const CLAIM_FEE_MIST     = 10_000_000_000n  // 10 SUPRA in Mist (9 decimals)
 const CLAIM_KV_KEY       = 'claim:season1:winner'
 const MAX_GAS            = 10_000n
