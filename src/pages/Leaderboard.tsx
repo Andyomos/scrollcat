@@ -102,7 +102,7 @@ export default function Leaderboard() {
       if (!provider) throw new Error('StarKey wallet not found')
 
       const treasuryWallet = board!.treasuryWallet
-      const feeInMist      = BigInt(CLAIM_FEE_SUPRA) * BigInt(1_000_000_000)
+      const feeInMist      = BigInt(CLAIM_FEE_SUPRA) * BigInt(100_000_000)  // 1e8 — SUPRA is 8 decimals
 
       // Step 1: Send 10 SUPRA claim fee to treasury
       const paymentTxHash = await provider.sendTransaction({

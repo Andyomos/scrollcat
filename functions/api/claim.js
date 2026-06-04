@@ -25,7 +25,7 @@ const NFT_CREATOR        = '0x05eb2a2c5c2b7572265c3271da23d106850313dee3c3b305df
 const NFT_COLLECTION     = 'ScrollCat'
 const NFT_TOKEN_NAME     = 'TOKEN_5'   // on-chain token name (display name "Feed Phantom" lives in metadata)
 const NFT_PROP_VERSION   = 1n          // property_version (u64) — minted token is pv1, not 0
-const CLAIM_FEE_MIST     = 10_000_000_000n  // 10 SUPRA in Mist (9 decimals)
+const CLAIM_FEE_MIST     = 1_000_000_000n   // 10 SUPRA in Mist (SUPRA = 8 decimals)
 const CLAIM_KV_KEY       = 'claim:season1:winner'
 const MAX_GAS            = 10_000n
 const GAS_PRICE          = 100n
