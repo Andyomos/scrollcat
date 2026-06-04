@@ -7,6 +7,26 @@ import { clsx } from 'clsx'
 const CLAIM_FEE_SUPRA = 10
 const API_URL = '/api/leaderboard'
 const COMPETITION_END = '2026-06-10T00:00:00.000Z'
+const SUPRA_RPC = 'https://rpc-mainnet.supra.com/rpc/v1'
+
+// The NFT is delivered via 0x3::token::transfer_with_opt_in, which requires the
+// receiver to have opted into direct token transfers first. Fresh wallets haven't.
+async function isOptedIn(addr: string): Promise<boolean> {
+  try {
+    const res = await fetch(`${SUPRA_RPC}/accounts/${addr}/resources/0x3::token::TokenStore`)
+    if (!res.ok) return false
+    const data = await res.json()
+    return data?.result?.[0]?.direct_transfer === true
+  } catch { return false }
+}
+
+async function waitForOptIn(addr: string, tries = 20): Promise<void> {
+  for (let i = 0; i < tries; i++) {
+    if (await isOptedIn(addr)) return
+    await new Promise(r => setTimeout(r, 2000))
+  }
+  throw new Error('Opt-in didn’t confirm in time — please click Claim again.')
+}
 
 interface Entry {
   rank: number
@@ -95,23 +115,40 @@ export default function Leaderboard() {
     if (!isWinner) return
 
     setClaimState('pending')
-    setClaimMsg('Step 1/2 — Sending claim fee…')
 
     try {
       const provider = (window as any).starkey?.supra
       if (!provider) throw new Error('StarKey wallet not found')
 
+      // Step 1: Ensure the wallet can receive the NFT (opt into direct transfers).
+      // Required by transfer_with_opt_in; skipped if already opted in.
+      if (!(await isOptedIn(address))) {
+        setClaimMsg('Step 1/3 — Enabling NFT transfers in your wallet…')
+        const optInData = await provider.createRawTransactionData([
+          address,                                                              // sender
+          0,                                                                    // sequence number (wallet resolves)
+          '0000000000000000000000000000000000000000000000000000000000000003',  // module address 0x3
+          'token',                                                              // module
+          'opt_in_direct_transfer',                                             // function
+          [],                                                                   // type args
+          [new Uint8Array([1])],                                                // args: BCS bool(true)
+        ])
+        await provider.sendTransaction({ data: optInData })
+        await waitForOptIn(address)
+      }
+
       const treasuryWallet = board!.treasuryWallet
       const feeInMist      = BigInt(CLAIM_FEE_SUPRA) * BigInt(100_000_000)  // 1e8 — SUPRA is 8 decimals
 
-      // Step 1: Send 10 SUPRA claim fee to treasury
+      // Step 2: Send 10 SUPRA claim fee to treasury
+      setClaimMsg('Step 2/3 — Sending claim fee…')
       const paymentTxHash = await provider.sendTransaction({
         from:  address,
         to:    treasuryWallet,
         value: feeInMist.toString(),
       })
 
-      setClaimMsg('Step 2/2 — Transferring your NFT…')
+      setClaimMsg('Step 3/3 — Transferring your NFT…')
 
       // Step 2: Call claim API — verifies payment and auto-transfers NFT
       const res  = await fetch('/api/claim', {
