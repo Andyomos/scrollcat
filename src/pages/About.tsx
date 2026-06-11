@@ -21,7 +21,7 @@ export default function About() {
 
       {/* Hero */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-        <img src="/imgs/Neon Surfing Through Digital Cosmos.png" alt="ScrollCat"
+        <img src="/imgs/Neon Surfing Through Digital Cosmos.webp" alt="ScrollCat"
           className="w-32 h-32 object-contain mx-auto mb-6 rounded-2xl drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]" />
         <h1 className="font-display font-black text-5xl neon-text mb-4">About ScrollCat</h1>
         <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">

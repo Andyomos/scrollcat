@@ -32,7 +32,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <img src="/imgs/Neon Surfing Through Digital Cosmos.png"
+          <img src="/imgs/Neon Surfing Through Digital Cosmos.webp"
                alt="ScrollCat" className="w-9 h-9 rounded-lg object-cover group-hover:shadow-neon-purple transition-shadow duration-300" />
           <span className="font-display font-bold text-lg neon-text tracking-wide">ScrollCat</span>
         </Link>
