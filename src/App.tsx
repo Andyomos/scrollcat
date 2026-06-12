@@ -2,9 +2,10 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
-import WalletProvider from '@/components/WalletProvider'
-import AnnouncementBar from '@/components/AnnouncementBar'
 
+// Lazy — pulls in wagmi/@reown/appkit + wallet SDKs; only needed on /swap, so
+// keep all of web3 out of the main bundle (was the homepage LCP bottleneck).
+const WalletProvider = lazy(() => import('@/components/WalletProvider'))
 const Home        = lazy(() => import('@/pages/Home'))
 const NFTs        = lazy(() => import('@/pages/NFTs'))
 const Swap        = lazy(() => import('@/pages/Swap'))
@@ -16,7 +17,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen flex flex-col bg-dark-950 text-white">
-        <AnnouncementBar />
         <Header />
         <div className="flex-1">
           <Suspense fallback={<div className="flex-1" />}>

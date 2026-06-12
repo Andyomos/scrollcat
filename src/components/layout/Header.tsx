@@ -17,7 +17,6 @@ const NAV = [
   { label: 'Home',        to: '/'            },
   { label: 'NFTs',        to: '/nfts'        },
   { label: 'Swap',        to: '/swap'        },
-  { label: 'Leaderboard', to: '/leaderboard' },
   { label: 'About',       to: '/about'       },
 ]
 
@@ -27,7 +26,7 @@ export default function Header() {
   const { address: suprAddr, shortAddress, loading, connect, disconnect, installed } = useStarKey()
 
   return (
-    <header className="fixed top-8 left-0 right-0 z-50 border-b border-white/[0.06] backdrop-blur-2xl bg-dark-950/70">
+    <header className="fixed top-0 left-0 right-0 z-50 border-b border-white/[0.06] backdrop-blur-2xl bg-dark-950/70">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
 
         {/* Logo */}
