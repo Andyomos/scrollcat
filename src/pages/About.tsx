@@ -3,14 +3,16 @@ import { Twitter, Send, ExternalLink, Mail } from 'lucide-react'
 import { SOCIAL, ATMOS_URL, SCAT_CONTRACT, SUPRA_WALLET, EMAIL } from '@/lib/constants'
 
 const ROADMAP = [
-  { phase: '01', title: 'Genesis',    status: 'done',    items: ['$SCAT token launched on Atmos', 'Website v1 live', 'Community building'] },
-  { phase: '02', title: 'Collection', status: 'active',  items: ['12-piece NFT collection', 'Trait reveal system', 'Website v2 (current)'] },
-  { phase: '03', title: 'Swap',       status: 'upcoming',items: ['Multi-chain swap aggregator', 'LI.FI integration', '0.05% fee live'] },
-  { phase: '04', title: 'Expand',     status: 'upcoming',items: ['Supra bridge support', 'Larger NFT collection', 'Community governance'] },
+  { phase: '01', title: 'Genesis',    status: 'done',    items: ['$SCAT launched on Atmos', 'Website live', 'Community built'] },
+  { phase: '02', title: 'Collection', status: 'done',    items: ['500-cat NFT collection', '6 rarity tiers', 'Crystara mint live'] },
+  { phase: '03', title: 'Swap',       status: 'done',    items: ['Multi-chain swap aggregator', 'LI.FI integration', '0.05% fee live'] },
+  { phase: '04', title: 'Arena',      status: 'live',    items: ['NFT-gated fighting game', 'Provably-fair dVRF combat', 'Play-to-graduate economy', 'Autonomous $SCAT buyback'] },
+  { phase: '05', title: 'Graduate & Beyond', status: 'upcoming', items: ['$SCAT graduation to deep liquidity', 'Cosmetics — fuel + prestige NFTs', 'Expanded roster', 'Supra bridge + governance'] },
 ]
 
 const statusStyle = {
   done:     'border-green-500/40 text-green-400',
+  live:     'border-cyan-400/60 text-cyan-400',
   active:   'border-neon-purple/50 text-neon-purple',
   upcoming: 'border-white/10 text-gray-500',
 }
@@ -21,7 +23,7 @@ export default function About() {
 
       {/* Hero */}
       <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="text-center mb-16">
-        <img src="/imgs/Neon Surfing Through Digital Cosmos.webp" alt="ScrollCat"
+        <img src="/imgs/logo-sm.webp" alt="ScrollCat" width={128} height={128}
           className="w-32 h-32 object-contain mx-auto mb-6 rounded-2xl drop-shadow-[0_0_30px_rgba(168,85,247,0.5)]" />
         <h1 className="font-display font-black text-5xl neon-text mb-4">About ScrollCat</h1>
         <p className="text-gray-400 max-w-xl mx-auto leading-relaxed">
@@ -74,7 +76,7 @@ export default function About() {
               <Twitter size={18} className="text-sky-400" />
               <div>
                 <p className="text-sm font-medium text-white">Twitter / X</p>
-                <p className="text-xs text-gray-500">@cat_scroll</p>
+                <p className="text-xs text-gray-500">@Scroll_Cat</p>
               </div>
               <ExternalLink size={12} className="text-gray-600 ml-auto group-hover:text-white transition-colors" />
             </a>
@@ -115,7 +117,7 @@ export default function About() {
           className="font-display font-bold text-3xl text-center text-white mb-8">
           Roadmap
         </motion.h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {ROADMAP.map((phase, i) => (
             <motion.div key={phase.phase}
               initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}

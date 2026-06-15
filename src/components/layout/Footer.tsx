@@ -11,7 +11,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-3">
-              <img src="/imgs/Neon Surfing Through Digital Cosmos.webp"
+              <img src="/imgs/logo-sm.webp" width={32} height={32}
                    alt="ScrollCat" className="w-8 h-8 rounded-lg object-cover" />
               <span className="font-display font-bold neon-text">ScrollCat</span>
             </div>

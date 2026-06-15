@@ -82,7 +82,7 @@ SECTION 5 — COMMUNITY  [mark heading with H toolbar]
 
 Community and On-Chain Verification
 
-Join the Discord: discord.gg/6NKeEzUt5
+Join the Discord: discord.gg/882PzzHzaD
 
 We built a custom on-chain verification bot — no Collab.Land, no middlemen. Connect your StarKey wallet at scrollcat.org/verify, prove you hold $SCAT or a ScrollCat NFT, and you're automatically granted the SCAT Holder role on Discord.
 
@@ -129,6 +129,6 @@ The feed never ends. Neither does $SCAT.
 
 Follow us on X: @cat_scroll
 Telegram: t.me/cat_scroll
-Discord: discord.gg/6NKeEzUt5
+Discord: discord.gg/882PzzHzaD
 
 #ScrollCat #SCAT #SupraBlockchain #NFT #Memecoin #Web3 #NFTCommunity

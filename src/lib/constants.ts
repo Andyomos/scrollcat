@@ -4,11 +4,13 @@ export const CRYSTARA_URL   = 'https://crystara.trade/marketplace/scrollcat'
 export const SWAP_FEE        = 0.0005   // 0.05% — lowest in market
 export const FEE_WALLET      = '0xF6F25919dcca48eeEced8dcE1048fCa32AF3b7A0'
 export const SUPRA_WALLET    = '0xf4a915b5e29bb5e8bcad30ebf78495e6a6c3acd2bcaff2ce36b861a5b50f9988'
+// Arena Treasury — game revenue lands here + funds the $SCAT buyback (separate from the creator wallet).
+export const ARENA_TREASURY  = '0xf9aceecd8696b8df7adfa3496d87ea2e0334585245b12216279446b5d4110cff'
 
 export const SOCIAL = {
-  twitter:  'https://x.com/cat_scroll',
+  twitter:  'https://x.com/Scroll_Cat',
   telegram: 'https://t.me/cat_scroll',
-  discord:  'https://discord.gg/6NKeEzUt5',
+  discord:  'https://discord.gg/882PzzHzaD',
 }
 
 export const EMAIL = {

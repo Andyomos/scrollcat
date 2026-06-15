@@ -109,7 +109,7 @@ No Collab.Land. No Twitter gating. Just connect your wallet, prove you hold, and
 
 The Lounge is where alpha drops, memes land first, and the competition leaderboard gets roasted in real time.
 
-Join: discord.gg/6NKeEzUt5
+Join: discord.gg/882PzzHzaD
 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -127,6 +127,6 @@ scrollcat.org/swap
 
 Follow us: @cat_scroll
 Telegram: t.me/cat_scroll
-Discord: discord.gg/6NKeEzUt5
+Discord: discord.gg/882PzzHzaD
 
 #ScrollCat #SCAT #SupraBlockchain #DeFi #NFT #Web3 #NFTCommunity #Doomscroll #Swap #LiFi

@@ -1,0 +1,51 @@
+{
+  "general": [
+    {"id":"G-GM-01","text":"gm to everyone who'd take a meme cat into a fistfight 🐱⚔️ what's the first move you throw — Attack, or bait the Block? ☕"},
+    {"id":"G-GM-02","text":"gm scrollers. the scroll never ends and neither does the grind. one question to start the day: how many of the 500 cats do YOU think make it to graduation diamond-handed? 👀"},
+    {"id":"G-GM-03","text":"gm. somewhere a jpeg is just sitting in a wallet doing nothing. not yours though — yours throws hands in the Den. 🥊 scrollcat.org/arena"},
+    {"id":"G-GM-04","text":"gm fighters ☕ drop a 🐱 if your cat is battle-ready, a 💤 if it's still asleep on the blockchain."},
+    {"id":"G-GM-05","text":"gm. reminder that every cosmetic bought today quietly buys $SCAT and nudges the bar up. you don't grind XP, you grind the chart. 🔁 we're at {pct}% to graduation."},
+    {"id":"G-GM-06","text":"gm. the cats that win aren't the rarest — they're the ones who read the opponent. block beats attack, special pierces block. it's chess with claws. ♟️🐱"},
+    {"id":"G-GM-07","text":"gm legends. what's your arena theme of choice — Fire (lava red), Void (deep purple), or Cosmic (galaxies)? 🔥🟣🌌"},
+    {"id":"G-Q-02","text":"Settle a debate: in a 1v1, is Dodge a galaxy-brain move or a coward's move? 🤔 Dodge slips both Attack and Special but deals zero damage. Genius or cope? 💬"},
+    {"id":"G-Q-03","text":"If you could add ONE fighter archetype to the roster, what is it? Drop it below — the best ideas actually get considered for cosmetics. 🎨"},
+    {"id":"G-Q-04","text":"Unpopular ScrollCat opinions thread 🧵 — go. I'll start: a leveled-up Common with 50 wins is cooler than a fresh Legendary. fight me 🥊"},
+    {"id":"G-Q-05","text":"Be honest 👀 — did you find ScrollCat through the art, the X banners, or a fren shilling you? Trying to figure out where the alpha travels. 📡"},
+    {"id":"G-Q-06","text":"Pick your fighter energy ⚡ — are you a Block-and-punish defensive player, or a full-send Ultimate-on-cooldown menace? No wrong answers (one is just more fun) 😼"},
+    {"id":"G-L-03","text":"📜 **LORE** — Why Supra? Because the Den's crits are seeded by dVRF — randomness baked into the chain. In the ScrollCat universe, \"fate\" is literally decentralized. No house. No rigged dice. Even *we* can't fix a fight. 🎲"},
+    {"id":"G-L-04","text":"📜 **LORE** — The 1-of-1 Mythic is called **The Infinite Scroller**. Somewhere in the 500 it exists. Whoever holds it holds the only cat the Scroll can't fully contain. We're not saying it does something special in the Den eventually. We're not *not* saying it. 👀"},
+    {"id":"G-H-01","text":"Other projects: \"utility coming soon.\" ScrollCat: *ships a playable provably-fair arena and a self-funding token economy, then tweets about it.* 🐱⚔️🚀"},
+    {"id":"G-H-02","text":"The meme is the marketing. The game is the utility. The economy is the moat. The cat is the key. 🔑🐱"},
+    {"id":"G-H-03","text":"179-ish cats still mintable. After that the only way in is buying off a holder who probably won't sell. Just saying. 👀 crystara.trade/marketplace/scrollcat"}
+  ],
+  "updates": [
+    {"id":"U-01","text":"📊 **Daily pulse** — $SCAT is **{pct}%** to graduation. {raised} SUPRA in, {remaining} to go. Every cosmetic bought in the Arena pushes this number up automatically. The bar only goes one way. 🔁"},
+    {"id":"U-03","text":"⚙️ **Under the hood:** the buyback engine runs on a VPS cron, hourly, signing real Supra transactions. It's not a promise in a deck — it's a process that's already moved the curve. Currently **{pct}%** to graduation, {remaining} SUPRA left."},
+    {"id":"U-04","text":"📈 **Where we are:** {raised} / 850,000 SUPRA on the curve (**{pct}%**). Slow is fine. On-chain and real beats fast and fake. The supply is fixed at 500 cats and the demand engine (the game) is live. Math does the rest."},
+    {"id":"U-06","text":"🧪 **Proof-of-work:** want receipts? the graduation bar reads the live curve, payments land on-chain, buybacks are signed txns you can look up. Connect a wallet and audit the whole thing. Glass box. **{pct}%** and climbing."},
+    {"id":"U-02","text":"🔧 **Still live & humming:** NFT-gated login (reads your cats straight off Supra), the PixiJS arena, real on-chain cosmetic purchases, and the autonomous buyback bot that turns revenue into $SCAT every hour. All of it running right now. **{pct}%** to graduation."},
+    {"id":"U-05","text":"🛠️ **Builder's note:** every win in the Den banks XP onto the NFT itself — a played cat is worth more than a minted-and-forgotten one. The game rewards the people who actually show up. **{pct}%** to graduation today."}
+  ],
+  "holders": [
+    {"id":"H-01","text":"Holders 🫡 — drop your favorite ScrollCat from your bag. Screenshot it. Lowest token ID flex AND highest win count both get respect in here. Let's see the army. 🐱"},
+    {"id":"H-02","text":"Holder strategy talk 🧠 — what's your Den gameplan? Do you bait Ultimates by faking aggression, or play patient and punish? Share a combo that's been working."},
+    {"id":"H-03","text":"Real talk for holders: the play-to-graduate loop means YOUR cosmetics buying is what graduates $SCAT. You're not just a holder, you're the demand engine. How are you thinking about cosmetics — flex now or stack for graduation? 🔁"},
+    {"id":"H-04","text":"Holder roll call 📋 — how many cats deep are you? 1? 3? 10+? No wrong answer, just curious how concentrated the army is. (Diamond hands only in here 💎🐱)"},
+    {"id":"H-05","text":"If you're holding and haven't taken your cat into the Den yet — do it today and report back. First-match-impressions thread 👇 Wins, losses, \"the crowd went cosmic\", all of it."}
+  ],
+  "alpha": [
+    {"id":"A-01","text":"🔮 **Alpha** — cosmetics are tiered: unlimited consumable \"fuel\" (cheap, repeatable, keeps the buyback humming) AND limited prestige NFT cosmetics (scarce, flex-tier). The prestige tier is where the real collectors are gonna play. More soon. 🤫"},
+    {"id":"A-02","text":"🔮 **Alpha** — XP on your cat isn't cosmetic-only forever. A leveled cat carrying real on-chain history is the foundation for things we haven't shipped yet. Grind now, thank yourself later. 😼"},
+    {"id":"A-03","text":"🔮 **Alpha** — graduation isn't the finish line, it's the *unlock*. When $SCAT graduates into deep liquidity, the whole economy levels up at once. The people in this channel will have seen it coming. 🎓"},
+    {"id":"A-04","text":"🔮 **Alpha** — we're watching which arena themes and finishers people gravitate to. The data shapes what gets minted as limited prestige drops. Your gameplay is literally voting on the roadmap. 🗳️"}
+  ],
+  "milestones": {
+    "2":"🚨 **2% TO GRADUATION** 🚨 $SCAT just crossed 2% on the curve — {raised} SUPRA raised, all of it driven by people *playing the game*. The flywheel works. {remaining} to go. 🔁🐱⚔️",
+    "5":"🚨 **5% MILESTONE** 🚨 1/20th of the way to graduating $SCAT, powered entirely by Arena cosmetics. No VC, no presale — just a meme cat that fights for its supper. {remaining} SUPRA left. 🚀",
+    "10":"🚨 **10% TO GRADUATION** 🚨 Double digits. The bar everyone said was \"just a number\" is now undeniably moving. {raised} SUPRA on the curve. The scroll never ends — but the supply does. 🐱⚔️🔥",
+    "25":"🚨 **25% TO GRADUATION** 🚨 A quarter of the way there, one cosmetic at a time. {raised} SUPRA on the curve, {remaining} to go. Play-to-graduate is real. 🔁",
+    "50":"🚨 **HALFWAY** 🚨 $SCAT is **50%** to graduation — {raised} SUPRA in. The meme that built a real economy is halfway home. 🐱⚔️🚀",
+    "75":"🚨 **75% TO GRADUATION** 🚨 The home stretch. {remaining} SUPRA between us and a graduated $SCAT. Keep playing, keep fueling. 🔥",
+    "100":"🚨🎓 **$SCAT HAS GRADUATED** 🎓🚨 The curve filled. The token is graduating into deep liquidity. Built by players, funded by the game, proven on-chain. This is the one they'll write about. 🐱⚔️🚀"
+  }
+}

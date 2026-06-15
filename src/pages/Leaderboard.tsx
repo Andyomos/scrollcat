@@ -1,4 +1,5 @@
 import { useEffect, useState, useCallback } from 'react'
+import { Link } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Trophy, Zap, RefreshCw, Clock, Star, AlertCircle, CheckCircle } from 'lucide-react'
 import { useStarKey } from '@/hooks/useStarKey'
@@ -178,7 +179,7 @@ export default function Leaderboard() {
         <p className="text-xs uppercase tracking-widest text-neon-cyan font-semibold mb-3">Swap Competition</p>
         <h1 className="font-display font-black text-5xl neon-text mb-3">Swap Leaderboard</h1>
         <p className="text-gray-400 text-sm max-w-lg mx-auto">
-          Swap on <a href="/swap" className="text-neon-cyan hover:underline">scrollcat.org/swap</a> to climb the ranks.
+          Swap on <Link to="/swap" className="text-neon-cyan hover:underline">scrollcat.org/swap</Link> to climb the ranks.
           Top swappers win NFTs, SCAT tokens, and exclusive Discord roles.
         </p>
       </motion.div>
@@ -290,7 +291,7 @@ export default function Leaderboard() {
         <div className="glass rounded-xl px-6 py-16 text-center">
           <Trophy size={40} className="text-gray-600 mx-auto mb-4" />
           <p className="text-gray-400 text-sm font-medium">No swaps recorded yet.</p>
-          <p className="text-gray-600 text-xs mt-1">Be the first — <a href="/swap" className="text-neon-cyan hover:underline">start swapping</a>.</p>
+          <p className="text-gray-600 text-xs mt-1">Be the first — <Link to="/swap" className="text-neon-cyan hover:underline">start swapping</Link>.</p>
         </div>
       ) : (
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}
@@ -337,11 +338,11 @@ export default function Leaderboard() {
       {/* CTA */}
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.4 }}
         className="mt-10 text-center">
-        <a href="/swap"
+        <Link to="/swap"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-neon-purple text-white font-bold text-sm hover:bg-neon-purple/80 transition-all active:scale-95">
           <Zap size={14} />
           Start Swapping
-        </a>
+        </Link>
         <p className="text-gray-600 text-xs mt-3">Only {(0.0005 * 100).toFixed(2)}% fee. Best routes across 30+ DEXes.</p>
       </motion.div>
 

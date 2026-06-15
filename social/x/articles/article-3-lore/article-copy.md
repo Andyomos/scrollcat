@@ -157,6 +157,6 @@ scrollcat.org/swap
 
 Follow us: @cat_scroll
 Telegram: t.me/cat_scroll
-Discord: discord.gg/6NKeEzUt5
+Discord: discord.gg/882PzzHzaD
 
 #ScrollCat #SCAT #SupraBlockchain #NFT #NFTCommunity #Web3 #NFTLore #Doomscroll #Crypto #Memecoin

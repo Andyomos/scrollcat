@@ -120,7 +120,7 @@ def handles_strip(img, draw, h_strip=54, accent=CYAN):
     od.line([(0, H-h_strip), (W, H-h_strip)], fill=(*accent, 70), width=1)
     img.alpha_composite(ov)
     f = fnt(FONT_REG, 20)
-    txt = "🐱  scrollcat.org   ·   @cat_scroll   ·   discord.gg/6NKeEzUt5   ·   t.me/cat_scroll"
+    txt = "🐱  scrollcat.org   ·   @cat_scroll   ·   discord.gg/882PzzHzaD   ·   t.me/cat_scroll"
     bb = draw.textbbox((0, 0), txt, font=f)
     tw = bb[2]-bb[0]
     draw.text(((W-tw)//2, H-h_strip+(h_strip-(bb[3]-bb[1]))//2), txt, font=f, fill=(*DIM, 210))
@@ -321,7 +321,7 @@ def x_discord(out_dir):
     d.line([(260,312),(940,312)], fill=(*DISC,70), width=1)
 
     f3 = fnt(FONT_BOLD, 40)
-    t3 = "discord.gg/6NKeEzUt5"
+    t3 = "discord.gg/882PzzHzaD"
     bb3 = d.textbbox((0,0), t3, font=f3)
     glowtext(d, t3, ((W-(bb3[2]-bb3[0]))//2, 336), f3, DISC, DISC, 72)
 
@@ -387,7 +387,7 @@ def ig_discord(out_dir):
     d.line([(160,492),(920,492)], fill=(*DISC,70), width=1)
 
     f2 = fnt(FONT_BOLD, 46)
-    t2 = "discord.gg/6NKeEzUt5"
+    t2 = "discord.gg/882PzzHzaD"
     bb2 = d.textbbox((0,0), t2, font=f2)
     glowtext(d, t2, ((W-(bb2[2]-bb2[0]))//2, 516), f2, DISC, DISC, 72)
 
