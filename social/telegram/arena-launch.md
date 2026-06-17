@@ -4,8 +4,8 @@
 
 ## Message (send + 📌 pin)
 ```
-🐱⚔️ SCROLLCAT ARENA IS LIVE ⚔️🐱
 
+🐱⚔️ SCROLLCAT ARENA IS LIVE ⚔️🐱
 Your ScrollCat just went from jpeg to FIGHTER.
 
 Connect your wallet → pick your cat → step into the Fighters' Den.

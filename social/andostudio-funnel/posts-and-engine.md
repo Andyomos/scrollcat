@@ -67,3 +67,25 @@ See the work → andostudio.ca 🛠️🐱
 6. **Capture intent** — andostudio.ca's "free working sample" CTA is the conversion. Make sure the contact form / lead path is obvious on landing.
 
 NOTE on tone/privacy: the article keeps the comeback story tasteful (family, stepped away, came back) WITHOUT financial-hardship specifics. Dial that up or down to your comfort before posting.
+
+═══════════════════════════════════════════════
+## D) SELLOUT FUNNEL POST (2026-06-16) — ride the sold-out moment → Ando Studio
+═══════════════════════════════════════════════
+Attach `social/soldout-x-landscape.jpg` (or andy-pfp-real-a.png for the founder angle).
+```
+The cat just SOLD OUT. 500/500, capped on-chain forever. 🐱🔒
+
+One builder in Edmonton 🇨🇦 turned a meme into a sold-out NFT collection + a live, on-chain game economy — shipping the whole stack solo.
+
+That's the portfolio. The same hands build sites & web3 apps for clients:
+→ andostudio.ca (free working sample before you pay)
+```
+
+Standalone variant (no image needed):
+```
+"who's going to build my idea?"
+
+the person whose last project just sold out 500/500 on-chain and runs a live web3 game economy. one builder, full stack, Edmonton.
+
+free working sample before you pay → andostudio.ca 🛠️
+```

@@ -48,3 +48,10 @@ Tone: confident, warm, a little degen. Never desperate. Copy → tweak a word �
 RULE OF THUMB: like generously, reply briefly, and only drop the andostudio.ca line when
 it's NATURAL (someone asks who built it or wants something built). Don't force the funnel —
 let ScrollCat be the proof and the link be the quiet payoff.
+
+═══════════════════════════════════════════════
+## 7. Reactions to the SOLD OUT news (2026-06-16)
+═══════════════════════════════════════════════
+- `🔒🐱 500/500, capped on-chain forever. supply's frozen — but the $SCAT curve isn't. it climbs every time someone plays → scrollcat.org/arena`
+- `gm to the fixed-supply club. you're the whole roster now. the only door left is secondary 👀`
+- `sold out is the starting gun, not the finish. same builder takes client work too → andostudio.ca 🛠️`

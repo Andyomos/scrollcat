@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// ScrollCat Discord auto-poster — runs daily on VPS cron.
-// Self-contained: webhooks (no auth), content bank, state file for no-repeats.
-// Posts 1 general + 1 update every run. holders ~Mon/Thu, alpha ~Wed/Sat (only if
-// a webhook for that channel exists in .env). Fires a milestone announcement when
-// $SCAT crosses a graduation threshold.
+// ScrollCat auto-poster — runs daily on VPS cron.
+// Self-contained: Discord webhooks (no auth) + Telegram channel (bot), content
+// bank, state file for no-repeats. Posts 1 general + 1 update every run. holders
+// ~Mon/Thu, alpha ~Wed/Sat (only if a webhook for that channel exists in .env).
+// Fires a milestone announcement when $SCAT crosses a graduation threshold.
+// Telegram "Cat_scroll news" (t.me/catscroller) mirrors the daily broadcast
+// (general + update as one message) + milestones — kept lean for a news channel.
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
@@ -29,6 +31,9 @@ const HOOKS = {
   holders: env.WEBHOOK_HOLDERS,
   alpha: env.WEBHOOK_ALPHA,
 };
+// Telegram channel (Cat_scroll news). Bot must be an admin of the channel.
+const TG_TOKEN = env.TELEGRAM_BOT_TOKEN;
+const TG_CHANNEL = env.TELEGRAM_CHANNEL; // e.g. @catscroller
 
 const now = Date.now(), DAY = 86400000;
 const today = new Date().toISOString().slice(0, 10);
@@ -86,6 +91,21 @@ async function post(channel, content, id) {
   else log(`FAILED ${channel} ${id || ''} → HTTP ${r.status}: ${await r.text().catch(()=> '')}`);
 }
 
+// --- Telegram: post to the Cat_scroll news channel (bot must be channel admin)
+async function tgSend(text, tag) {
+  if (!TG_TOKEN || !TG_CHANNEL) { log(`skip telegram ${tag || ''} (not configured)`); return; }
+  if (DRY) { log(`DRY telegram ${tag || ''} → ${text.slice(0, 90).replace(/\n/g, ' ')}…`); return; }
+  try {
+    const r = await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
+      method: 'POST', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ chat_id: TG_CHANNEL, text, disable_web_page_preview: true }),
+    });
+    const j = await r.json().catch(() => ({}));
+    if (j.ok) log(`posted telegram ${tag || ''} ✅`);
+    else log(`FAILED telegram ${tag || ''} → HTTP ${r.status}: ${JSON.stringify(j).slice(0, 200)}`);
+  } catch (e) { log(`telegram ${tag || ''} error:`, e.message); }
+}
+
 // --- invite watchdog: catch an expired/expiring Discord invite before the
 //     community does. Permanent invites won't trigger this; it's insurance. ----
 async function checkInvite() {
@@ -114,21 +134,33 @@ const stats = await getStats();
 const dow = new Date().getUTCDay(); // 0 Sun .. 6 Sat
 await checkInvite();
 
-// milestone announcement (highest newly-crossed threshold)
+// milestone announcement (highest newly-crossed threshold) → Discord + Telegram
 if (stats) {
   const crossed = Object.keys(BANK.milestones).map(Number)
     .filter(m => stats.pctNum >= m && m > (state.lastMilestone || 1)).sort((a, b) => a - b);
   if (crossed.length) {
     const m = crossed[crossed.length - 1];
-    await post('announcements', fill(BANK.milestones[String(m)], stats), `M-${m}`);
+    const msg = fill(BANK.milestones[String(m)], stats);
+    await post('announcements', msg, `M-${m}`);
+    await tgSend(msg, `M-${m}`);
     state.lastMilestone = m;
   }
 }
 
+// Standing growth CTA — always invite friends + nudge hunting a (cheap) cat on
+// secondary. Rotates daily so it varies. Appended to the general/daily broadcast.
+const GROWTH = BANK.growth || [];
+const footer = GROWTH.length
+  ? '\n\n— — —\n' + fill(GROWTH[Math.floor(now / DAY) % GROWTH.length].text, stats)
+  : '';
+
 // daily content. If stats failed, avoid items with {placeholders} so we never post literal "{pct}".
 const ok = items => stats ? items : items.filter(it => !it.text.includes('{'));
-const g = pickNext(ok(BANK.general)); if (g) await post('general', fill(g.text, stats), g.id);
-const u = pickNext(ok(BANK.updates)); if (u) await post('updates', fill(u.text, stats), u.id);
+const tgParts = [];
+const g = pickNext(ok(BANK.general)); if (g) { const t = fill(g.text, stats); await post('general', t + footer, g.id); tgParts.push(t); }
+const u = pickNext(ok(BANK.updates)); if (u) { const t = fill(u.text, stats); await post('updates', t, u.id); tgParts.push(t); }
+// Telegram news channel = one combined daily broadcast (general + update) + growth CTA.
+if (tgParts.length) await tgSend(tgParts.join('\n\n———\n\n') + footer, 'daily');
 if (dow === 1 || dow === 4) { const h = pickNext(ok(BANK.holders)); if (h) await post('holders', fill(h.text, stats), h.id); }
 if (dow === 3 || dow === 6) { const a = pickNext(ok(BANK.alpha)); if (a) await post('alpha', fill(a.text, stats), a.id); }
 

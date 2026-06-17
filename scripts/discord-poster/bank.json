@@ -16,7 +16,11 @@
     {"id":"G-L-04","text":"📜 **LORE** — The 1-of-1 Mythic is called **The Infinite Scroller**. Somewhere in the 500 it exists. Whoever holds it holds the only cat the Scroll can't fully contain. We're not saying it does something special in the Den eventually. We're not *not* saying it. 👀"},
     {"id":"G-H-01","text":"Other projects: \"utility coming soon.\" ScrollCat: *ships a playable provably-fair arena and a self-funding token economy, then tweets about it.* 🐱⚔️🚀"},
     {"id":"G-H-02","text":"The meme is the marketing. The game is the utility. The economy is the moat. The cat is the key. 🔑🐱"},
-    {"id":"G-H-03","text":"179-ish cats still mintable. After that the only way in is buying off a holder who probably won't sell. Just saying. 👀 crystara.trade/marketplace/scrollcat"}
+    {"id":"G-H-03","text":"There used to be cats left to mint. Not anymore — all 500 are gone, collection closed on-chain forever. The only door left is secondary, and the floor is still silly cheap. 👀 crystara.trade/marketplace/scrollcat"},
+    {"id":"G-NFT-01","text":"Why own a ScrollCat? It's the key 🔑 — your NFT logs you into the Arena, your XP lives on it, and all 500 are locked in forever. Sold out on-chain, never another mint. The whole roster exists; you just decide if you're in it. Floor's still cheap → crystara.trade/marketplace/scrollcat 🐱"},
+    {"id":"G-NFT-02","text":"All 500 minted. Collection closed, permanently. Supply can NEVER grow — but the game (the demand) is live and pushing $SCAT every day. Fixed supply + rising demand is the oldest trade in the book. And the floor is still tiny. 👀 crystara.trade/marketplace/scrollcat"},
+    {"id":"G-NFT-03","text":"Why hunt a cat NOW: ① it gates the Arena ② it banks XP as you play ③ supply is frozen at 500, sold out ④ secondary floor is still pocket-change. Pre-graduation entry doesn't come back once the curve fills. 🎓 crystara.trade/marketplace/scrollcat"},
+    {"id":"G-NFT-04","text":"Every ScrollCat is a working game piece, not a static jpeg. It logs you in, it fights, it levels, it carries history. 500 of them, sold out, and you can still grab one for cheap on secondary. That gap won't last. 🐾 crystara.trade/marketplace/scrollcat"}
   ],
   "updates": [
     {"id":"U-01","text":"📊 **Daily pulse** — $SCAT is **{pct}%** to graduation. {raised} SUPRA in, {remaining} to go. Every cosmetic bought in the Arena pushes this number up automatically. The bar only goes one way. 🔁"},
@@ -38,6 +42,12 @@
     {"id":"A-02","text":"🔮 **Alpha** — XP on your cat isn't cosmetic-only forever. A leveled cat carrying real on-chain history is the foundation for things we haven't shipped yet. Grind now, thank yourself later. 😼"},
     {"id":"A-03","text":"🔮 **Alpha** — graduation isn't the finish line, it's the *unlock*. When $SCAT graduates into deep liquidity, the whole economy levels up at once. The people in this channel will have seen it coming. 🎓"},
     {"id":"A-04","text":"🔮 **Alpha** — we're watching which arena themes and finishers people gravitate to. The data shapes what gets minted as limited prestige drops. Your gameplay is literally voting on the roadmap. 🗳️"}
+  ],
+  "growth": [
+    {"id":"GF-1","text":"🐾 Love it here? Drag a fren in — share t.me/catscroller & discord.gg/882PzzHzaD. We grow this together. (Not holding yet? Cats are still cheap on secondary: crystara.trade/marketplace/scrollcat)"},
+    {"id":"GF-2","text":"📣 Invite one fren today — every scroller makes the army bigger: t.me/catscroller. And if they want in, a cat is still pocket-change on secondary → crystara.trade/marketplace/scrollcat 🐱"},
+    {"id":"GF-3","text":"🤝 Help us grow — forward this to someone who'd vibe with a fighting meme cat. 500 cats, sold out, floor still low → grab one before graduation: crystara.trade/marketplace/scrollcat"},
+    {"id":"GF-4","text":"🚀 Bring your frens — the bigger the den, the harder we graduate. Share t.me/catscroller, and snag a cheap cat before the curve fills: crystara.trade/marketplace/scrollcat"}
   ],
   "milestones": {
     "2":"🚨 **2% TO GRADUATION** 🚨 $SCAT just crossed 2% on the curve — {raised} SUPRA raised, all of it driven by people *playing the game*. The flywheel works. {remaining} to go. 🔁🐱⚔️",
