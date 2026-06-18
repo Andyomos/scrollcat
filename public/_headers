@@ -3,3 +3,4 @@
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Link: </llms.txt>; rel="describedby", </llms.txt>; rel="service-desc"

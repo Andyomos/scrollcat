@@ -1,0 +1,24 @@
+# ScrollCat
+
+> A meme-native NFT collection, NFT-gated fighting game (the Arena), and $SCAT token economy on the Supra blockchain. Own a cat, fight in the Arena, grow the economy.
+
+ScrollCat is three assets in one loop: the 500-piece ScrollCat NFT (your identity + your fighter, hard cap 500, sold out), $SCAT (the ecosystem token on Atmos), and the Arena (a provably-fair fighting game). Combat randomness uses Supra dVRF (verifiable, unriggable). A "play-to-graduate" economy routes a share of Arena revenue into buying $SCAT.
+
+## Play
+- [ScrollCat Arena](https://scrollcat.org/arena): NFT-gated fighting game. Enter with your cat, choose Attack/Block/Dodge/Special each round, climb the ladder. Provably fair via Supra dVRF.
+- [Leaderboard](https://scrollcat.org/leaderboard): Live Arena rankings.
+
+## Learn
+- [Whitepaper / Litepaper](https://scrollcat.org/whitepaper): Tokenomics, the three assets, the play-to-graduate flywheel, cosmetics (fuel + prestige), and roadmap.
+- [About](https://scrollcat.org/about): What ScrollCat is.
+
+## Own & trade
+- ScrollCat NFT (the Arena gate): 500, fixed supply, SOLD OUT — available on the secondary market at Crystara: https://crystara.trade/marketplace/scrollcat
+- $SCAT token (on the Atmos Pump bonding curve, Supra): https://app.atmos.ag/en/token-studio/0x66f07d8d66b7e31a41bb93782f5ff3331f172d46fcf8f0df204de911ec7e6109
+
+## Community
+- X / Twitter: https://x.com/Scroll_Cat
+- Telegram: https://t.me/cat_scroll
+- Discord: https://discord.gg/882PzzHzaD
+
+Note: ScrollCat is a community project. Nothing here is financial advice; participate responsibly.
