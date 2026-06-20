@@ -32,6 +32,7 @@ ScrollCat fights are seeded by Supra dVRF — decentralized, Verifiable Random F
 🧾 Every roll ships with a cryptographic proof anyone can check
 
 Your crit wasn't us being nice. It was math you can audit.
+https://x.com/Scroll_Cat/status/2068134632445587777
 ```
 
 **Tweet 4/5** (the deterministic flex)
@@ -43,6 +44,7 @@ A match = your cat + opponent + the dVRF seed + the moves.
 Feed it back → it resolves identically, every time. Anyone can replay any fight and confirm the winner.
 
 No black box. No "the server says you lost." 🔁
+https://x.com/Scroll_Cat/status/2068134632445587777
 ```
 
 **Tweet 5/5** (CTA → article)
@@ -50,7 +52,7 @@ No black box. No "the server says you lost." 🔁
 On most chains provable randomness is an expensive bolt-on. On Supra it's native — that's WHY we're here.
 
 Full breakdown 👇
-[ARTICLE LINK]
+https://x.com/Scroll_Cat/status/2068134632445587777
 
 🎮 Play: scrollcat.org/arena
 

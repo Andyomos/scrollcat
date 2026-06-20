@@ -1,0 +1,35 @@
+﻿{
+    "name":  "ScrollCat Giveaway - ScrollKeeper Airdrop Pass",
+    "description":  "A promotional ScrollCat NFT giveaway artwork inspired by The Infinite Scroller, built for the Supra community and the endless feed protectors.",
+    "image":  "scrollcat-giveaway-nft.png",
+    "external_url":  "https://scrollcat.org",
+    "collection":  "ScrollCat",
+    "token":  "$SCAT",
+    "chain":  "Supra Blockchain",
+    "attributes":  [
+                       {
+                           "trait_type":  "Edition",
+                           "value":  "Giveaway"
+                       },
+                       {
+                           "trait_type":  "Rarity",
+                           "value":  "Promo Mythic"
+                       },
+                       {
+                           "trait_type":  "Base Inspiration",
+                           "value":  "The Infinite Scroller"
+                       },
+                       {
+                           "trait_type":  "Aura",
+                           "value":  "Gold Cyber Halo"
+                       },
+                       {
+                           "trait_type":  "Community Role",
+                           "value":  "ScrollKeeper"
+                       },
+                       {
+                           "trait_type":  "Utility",
+                           "value":  "Airdrop Pass"
+                       }
+                   ]
+}
