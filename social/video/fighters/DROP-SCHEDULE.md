@@ -5,7 +5,7 @@ each gets its own moment instead of dumping all 8. Stage from this folder; Andy 
 
 ## Cadence rule
 - **1 fighter / week**, posted the SAME day each week (suggested: **Tuesday**, mid-week attention).
-- Same clip goes to all 4 channels, lightly retoned per platform (see below).
+- Same clip goes to all 6 channels (X, Telegram, Discord, Pinterest, Instagram, Facebook), lightly retoned per platform (see below).
 - Keep both growth hooks every time: *floor cheap / 500 closed forever* + *bring a friend*.
 - Order = strongest hooks first/last (Neon Blade opens, Ninja Scat + Thunder Claw anchor the finish).
 
@@ -27,6 +27,8 @@ each gets its own moment instead of dumping all 8. Stage from this folder; Andy 
 - **Telegram (t.me/cat_scroll):** RECOMMENDED, mirrors via daily poster.
 - **Discord #general:** PUNCHIER one-liner + clip.
 - **Pinterest:** the hero PNG (2:3 crop) as a pin → scrollcat.org/arena; clip optional (video pins supported).
+- **Instagram (@cat_scroll):** REEL. Upload the VERTICAL build `../../instagram/reels/NN-name-IG-reel.mp4` (1080×1920, blurred-pad — the originals are 1284×716 landscape and won't fill a Reel). Caption from `../../instagram/roster-series-IG-captions.md`. ⚠ IG has NO clickable caption links → CTA = "link in bio" (set bio to scrollcat.org/arena). Intro/recap reel = `roster-conviction-reel-vertical.mp4` + `../../instagram/roster-conviction-reel-IG.txt`.
+- **Facebook (page 61590557170293):** post the landscape `NN-name-captioned.mp4` as a feed REEL (FB caption tone, links ARE clickable in FB posts → scrollcat.org/arena). PLUS a STORY beat — drop the vertical IG reel or a static `../../facebook/stories/*.png` with a LINK STICKER → scrollcat.org/arena (FB Stories were at 0 views; story link stickers are clickable). Guide: `../../facebook/stories/STORY-GUIDE-FB.txt`. Page is NOT Zapier-connected — post manually.
 
 ## Week 8 payoff
 After Ninja Scat, post a **roster line-up** recap (all 8) → "The roster's complete. Every fighter is one
@@ -38,4 +40,4 @@ captions are Model-A-safe ("every one of the 500 is a fighter").
 
 ## Automation candidate (future)
 This calendar is a clean fit for a weekly cloud routine (like the Discord daily poster) — post the week's
-fighter to all 4 channels automatically. Not built yet; flagged for when the manual run proves out.
+fighter to all 6 channels automatically. Not built yet; flagged for when the manual run proves out.

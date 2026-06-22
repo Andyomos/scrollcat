@@ -1,0 +1,33 @@
+═══════════════════════════════════════════════
+FACEBOOK STORY — ScrollCat page (id 61590557170293)
+Post manually (page is NOT Zapier-connected). Stories = 24h, vertical 1080×1920.
+WHY: FB Insights shows Stories at 0 views / "not enough data" — no Stories presence at all,
+while Reels pull 91% of views (96.5% non-followers). Stories warm the follower base + funnel to Arena.
+★ FB Story LINK STICKERS are clickable — use one. (Add: Story editor → sticker → "Link" → paste URL.)
+═══════════════════════════════════════════════
+
+▶ EASIEST (post right now): one of the ready static images below. Already sized + text burned in.
+   Just add a LINK sticker pointing to scrollcat.org/arena and post.
+
+────────── OPTION A — static image story ──────────
+Upload: facebook/stories/story-1-roster.png   ("MEET THE ROSTER — 8 fighters · 1 Arena")
+   Link sticker → https://scrollcat.org/arena
+   (Optional 2nd story, post back-to-back:)
+Upload: facebook/stories/story-2-floor.png    ("500 CLOSED FOREVER — floor still cheap")
+   Link sticker → https://scrollcat.org/arena
+
+────────── OPTION B — video story (more eye-catching) ──────────
+Upload as Story: video/fighters/roster-conviction-reel-vertical.mp4  (1080×1920, 26s, sound)
+   Add text overlay (top): "Meet the roster ⚔️"
+   Link sticker → https://scrollcat.org/arena
+   (You can also drop ANY single fighter Reel from social/instagram/reels/ as a Story —
+    they're all 1080×1920. E.g. 01-neon-blade-IG-reel.mp4.)
+
+────────── OPTIONAL TEXT (if a panel asks for caption text) ──────────
+500 ScrollCats, closed on-chain forever. Every one is a fighter in the Arena — live now.
+Floor's still cheap. Tap to play → scrollcat.org/arena 🐾⚔️
+
+────────── CADENCE IDEA ──────────
+Stories are cheap + ephemeral — good for a "behind the Reel" beat: each Tuesday roster drop,
+also push that week's fighter as a Story (image or the vertical reel) with a link sticker to the Arena.
+This is now noted alongside the 5-channel plan in video/fighters/DROP-SCHEDULE.md.
